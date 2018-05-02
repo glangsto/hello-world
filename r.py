@@ -17,6 +17,7 @@ import interpolate
 dy = -1.
 
 nargs = len( sys.argv)
+verbose = False  # or True
 
 linestyles = ['-','-','--','-.','-','--','-.','-','--','-.','-','--','-.','-','--','-.','-','--','-','-','--','-.','-','--','-.','-','--','-.','-','--','-.','-','--','-.','-','--','-.']
 colors = ['-b','-r','-g','-b','-r','-g','-b','-r','-g','-b','-r','-g','-b','-r','-g','-b','-r','-g','-b','-r','-g','-b','-r','-g','-b','-r','-g','-b','-r','-g','-b','-r','-g','-b','-r','-g']
@@ -31,14 +32,19 @@ linelist = [1420.0, 1418.0]  # RFI lines in MHz
 linewidth = [7, 7]
 
 #for symbol, value in locals().items():
-#    print symbol, value
+
+# initialize spectrum for reading and plotting
+rs = radioastronomy.Spectrum()
 
 nplot = 0
+
+# plot no more than N spectra
 for iii in range(1, min(nargs,25)):
 
     filename = sys.argv[iii]
+    if verbose:
+        print '%5d: %s' % (iii, filename)
 
-    rs = radioastronomy.Spectrum()
 #    print filename
     rs.read_spec_ast( filename)
 # for averages can not use az,el to get ra,dec and glat, glon
