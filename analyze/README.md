@@ -1,4 +1,4 @@
-# hello-world
+# hello-world/analyze
 This project contains plotting tools reviewing spectra data from Science Aficionado Telescopes.
 The plotting programs expect Ascii input spectra with extensive headers describing the observations.
 
