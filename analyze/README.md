@@ -11,6 +11,10 @@ These programs are also compatible with the older NsfWatch output (watch.py)
 Files:
 ======
 
+S     Function to call s.py, which summarizes a set of observations in a directory
+
+s.py  Python function to read all selected spectra in a directory and summarize the observations
+
 R     Function to call r.py, which plots raw spectra
 
 r.py  Python function to read the spectra and plot them
